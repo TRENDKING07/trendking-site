@@ -58,7 +58,7 @@
       <a class="telegram" target="_blank" href="https://t.me/TRENDKING07"><i class="fab fa-telegram"></i> Telegram</a>
     </div>
 
-    <!-- فكرة الاستثمار (قبل لماذا تكون معنا) -->
+    <!-- فكرة الاستثمار -->
     <section class="card">
       <h2>💡 فكرة الاستثمار</h2>
       <ul>
@@ -74,6 +74,25 @@
       </div>
     </section>
 
+    <!-- أداة حساب العائد اليومي والشهري (بالدولار) -->
+    <section class="card" style="margin-top:20px; padding:20px; border-radius:12px; background:linear-gradient(145deg,#071322,#0e1b2b); box-shadow:0 0 12px rgba(0,0,0,0.3); text-align:center;">
+      <h2 style="color:#FFD700; margin-bottom:15px; font-size:22px;">📊 احسب عائدك اليومي والشهري (بالدولار)</h2>
+      <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:15px;">
+        <input type="number" id="invUSD" min="1500" step="0.01"
+               placeholder="قيمة الاستثمار ($)"
+               style="padding:10px; width:220px; border-radius:8px; border:1px solid #2b3d55; background:#0b1626; color:#eaeef3; font-size:15px;">
+        <input type="number" id="ratePct" min="0" max="100" step="0.01"
+               placeholder="العائد اليومي (%)"
+               style="padding:10px; width:220px; border-radius:8px; border:1px solid #2b3d55; background:#0b1626; color:#eaeef3; font-size:15px;">
+      </div>
+      <button onclick="calcDailyUsd()"
+              style="padding:10px 20px; font-size:15px; border:none; border-radius:8px; background:#FFD700; color:#000; font-weight:bold; cursor:pointer; transition:0.3s;">
+        احسب الآن
+      </button>
+      <p id="calcMsg" style="margin-top:15px; font-weight:700; font-size:16px;"></p>
+      <small style="color:#9bb3c9;">* الحد الأدنى للاستثمار: 1500$</small>
+    </section>
+
     <!-- لماذا تكون معنا -->
     <section class="card">
       <h2>❓ لماذا تكون معنا؟</h2>
@@ -83,7 +102,7 @@
       </ul>
     </section>
 
-    <!-- العوائد الشهرية (المساحة المحددة بين القسمين) -->
+    <!-- العوائد الشهرية -->
     <h2 class="section-title">العوائد الشهرية</h2>
     <img class="divider-img" src="images/income_chart.jpg" alt="العوائد الشهرية">
 
@@ -120,6 +139,34 @@ Server:         Exness-MT5Real19
     function togglePopup(){
       const el=document.getElementById('popup');
       el.style.display = (el.style.display==='block') ? 'none' : 'block';
+    }
+    function calcDailyUsd(){
+      const msg = document.getElementById('calcMsg');
+      const inv = parseFloat(document.getElementById('invUSD').value);
+      const rate = parseFloat(document.getElementById('ratePct').value);
+      const fmt = new Intl.NumberFormat('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+
+      if (isNaN(inv) || isNaN(rate)) {
+        msg.style.color = 'tomato';
+        msg.innerHTML = '⚠️ الرجاء إدخال قيمة الاستثمار والعائد اليومي.';
+        return;
+      }
+      if (inv < 1500) {
+        msg.style.color = 'tomato';
+        msg.innerHTML = '🚫 الحد الأدنى للاستثمار هو 1500 دولار.';
+        return;
+      }
+      if (rate < 0 || rate > 100) {
+        msg.style.color = 'tomato';
+        msg.innerHTML = '⚠️ الرجاء إدخال نسبة عائد يومي بين 0% و 100%.';
+        return;
+      }
+
+      const dailyProfit = inv * (rate / 100);
+      const monthlyProfit = dailyProfit * 21; // 21 يوم تداول بالشهر
+
+      msg.style.color = '#7CFC00';
+      msg.innerHTML = `💰 العائد اليومي: ${fmt.format(dailyProfit)} دولار<br>📅 العائد الشهري التقريبي: ${fmt.format(monthlyProfit)} دولار`;
     }
   </script>
 </body>
