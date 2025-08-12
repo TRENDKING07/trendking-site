@@ -74,82 +74,125 @@
       </div>
     </section>
 
-    <!-- أداة حساب العائد اليومي والشهري (أوتوماتيكية من 36.67% شهريًا / 21 يوم) -->
-<section class="card" style="margin-top:20px; padding:20px; border-radius:12px; background:linear-gradient(145deg,#071322,#0e1b2b); box-shadow:0 0 12px rgba(0,0,0,0.3); text-align:center;">
-  <h2 style="color:#FFD700; margin-bottom:12px;">
-    📊 احسب عائدك اليومي والشهري (بالدولار)
-  </h2>
+    <!-- الحاسبة (36.67% شهريًا / 21 يوم) -->
+    <section class="card" style="margin-top:20px; padding:20px; border-radius:12px; background:linear-gradient(145deg,#071322,#0e1b2b); box-shadow:0 0 12px rgba(0,0,0,0.3); text-align:center;">
+      <h2 style="color:#FFD700; margin-bottom:12px;">📊 احسب عائدك اليومي والشهري (بالدولار)</h2>
 
-  <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; align-items:center; margin-bottom:12px;">
-    <input type="number" id="invUSD" min="1500" step="0.01"
-           placeholder="قيمة الاستثمار ($)"
-           style="padding:10px; width:260px; border-radius:8px; border:1px solid #2b3d55; background:#0b1626; color:#eaeef3; font-size:15px;">
-    <span id="dailyPctBadge"
-          style="display:inline-block; padding:8px 12px; border-radius:999px; background:#102036; border:1px dashed #355079; color:#cfe6ff; font-weight:700;">
-      النسبة اليومية ≈ 1.746%
-    </span>
+      <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; align-items:center; margin-bottom:12px;">
+        <input type="number" id="invUSD" min="1500" step="0.01"
+               placeholder="قيمة الاستثمار ($)"
+               style="padding:10px; width:260px; border-radius:8px; border:1px solid #2b3d55; background:#0b1626; color:#eaeef3; font-size:15px;">
+        <span id="dailyPctBadge"
+              style="display:inline-block; padding:8px 12px; border-radius:999px; background:#102036; border:1px dashed #355079; color:#cfe6ff; font-weight:700;">
+          النسبة اليومية ≈ 1.746%
+        </span>
+      </div>
+
+      <button onclick="calcAuto()"
+              style="padding:10px 20px; font-size:15px; border:none; border-radius:8px; background:#FFD700; color:#000; font-weight:bold; cursor:pointer; transition:0.3s;">
+        احسب الآن
+      </button>
+
+      <p id="calcMsg" style="margin-top:15px; font-weight:700; font-size:16px;"></p>
+      <small style="color:#9bb3c9;">
+        * الحد الأدنى للاستثمار: 1500$ — النسبة الشهرية المفترضة: 36.67% خلال 21 يوم تداول (≈ <span id="dailyPctText">1.746%</span> يوميًا)
+      </small>
+    </section>
+
+    <!-- لماذا تكون معنا -->
+    <section class="card">
+      <h2>❓ لماذا تكون معنا؟</h2>
+      <ul>
+        <li>لا تحتاج للمتابعة اليومية المرهِقة — عِش حياتك وركّز في عملك، ودَع الحساب يعمل.</li>
+        <li>بنهاية الشهر ستجد مبلغًا محترمًا يمكنك الاستفادة منه والشعور ببركته بإذن الله.</li>
+      </ul>
+    </section>
+
+    <!-- العوائد الشهرية -->
+    <h2 class="section-title">العوائد الشهرية</h2>
+    <img class="divider-img" src="images/income_chart.jpg" alt="العوائد الشهرية">
+
+    <!-- حساب المشاهدة -->
+    <section class="card">
+      <h2>📊 بيانات حساب المشاهدة (سِنت أمريكي)</h2>
+      <p class="muted">يمكنك إرفاق لقطة شاشة لمنصة MT5 بدل الصورة الافتراضية.</p>
+      <a class="watch-link" href="#" title="MT5 Watch">
+        <img src="images/ex-logo.jpg" alt="Exness"> MT5 Watch
+      </a>
+      <pre>
+Account Number: 157276506
+Password:       You@1212
+Server:         Exness-MT5Real19
+      </pre>
+    </section>
+
+    <!-- طريقة الحساب (2000$) -->
+    <section class="card">
+      <h2>📈 كيف أحسب دخلي إذا بدأت بـ <span style="color:#ffe082">2000 دولار</span>؟</h2>
+      <p>تابع أرباح حساب المشاهدة، واضرب الربح في نسبة الفرق بين المحفظتين.</p>
+      <div class="card" style="background:#0d1a2b;border-color:var(--border)">
+        <b>🔹 مثال:</b><br>
+        لو حساب الـ 100 دولار ربح <b>$3</b> في يوم معيّن، فإن محفظة الـ <b>2000$</b> ستحقق تقريبًا <b>$60</b>.<br>
+        <b>المعادلة:</b> <span style="color:#7dd3fc">2000 ÷ 100 = 20 → 20 × 3 = 60</span><br>
+        نفس النظام، نفس الأداء، والفرق فقط في <b>حجم اللوت</b>.
+      </div>
+    </section>
+
+    <footer>© 2025 — <span class="brand">TREND KING</span> • إدارة مخاطر منضبطة • عوائد مستهدفة 30%–40%</footer>
   </div>
 
-  <button onclick="calcAuto()" 
-          style="padding:10px 20px; font-size:15px; border:none; border-radius:8px; background:#FFD700; color:#000; font-weight:bold; cursor:pointer; transition:0.3s;">
-    احسب الآن
-  </button>
-
-  <p id="calcMsg" style="margin-top:15px; font-weight:700; font-size:16px;"></p>
-  <small style="color:#9bb3c9;">
-    * الحد الأدنى للاستثمار: 1500$ — النسبة الشهرية المفترضة: 36.67% خلال 21 يوم تداول (≈ <span id="dailyPctText">1.746%</span> يوميًا)
-  </small>
-</section>
-
-<script>
-  // ثوابت النسبة
-  const PCT_MONTHLY = 36.67;     // % شهريًا
-  const TRADING_DAYS = 21;       // يوم تداول بالشهر
-  const PCT_DAILY = PCT_MONTHLY / TRADING_DAYS; // ≈ 1.746%
-
-  // تحديث شارة النسبة اليومية
-  const badge = document.getElementById('dailyPctBadge');
-  const dailyPctText = document.getElementById('dailyPctText');
-  function setDailyPctText(){
-    const pct = new Intl.NumberFormat('en-US', {minimumFractionDigits:3, maximumFractionDigits:3}).format(PCT_DAILY);
-    badge.textContent = `النسبة اليومية ≈ ${pct}%`;
-    dailyPctText.textContent = `${pct}%`;
-  }
-  setDailyPctText();
-
-  // حساب تلقائي
-  const invInput = document.getElementById('invUSD');
-  const msg = document.getElementById('calcMsg');
-  const fmtMoney = new Intl.NumberFormat('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
-
-  function calcAuto(){
-    const inv = parseFloat(invInput.value);
-    if (isNaN(inv)) {
-      msg.style.color = 'tomato';
-      msg.innerHTML = '⚠️ الرجاء إدخال قيمة الاستثمار.';
-      return;
-    }
-    if (inv < 1500) {
-      msg.style.color = 'tomato';
-      msg.innerHTML = '🚫 الحد الأدنى للاستثمار هو 1500 دولار.';
-      return;
+  <script>
+    // نافذة التواصل
+    function togglePopup(){
+      const el=document.getElementById('popup');
+      el.style.display = (el.style.display==='block') ? 'none' : 'block';
     }
 
-    const monthlyProfit = inv * (PCT_MONTHLY / 100);
-    const dailyProfit = monthlyProfit / TRADING_DAYS;
+    // ثوابت الحاسبة: 36.67% شهريًا / 21 يوم تداول
+    const PCT_MONTHLY = 36.67;
+    const TRADING_DAYS = 21;
+    const PCT_DAILY = PCT_MONTHLY / TRADING_DAYS; // ≈ 1.746%
 
-    msg.style.color = '#FFD700';
-    msg.innerHTML = `
-      🏅 العائد اليومي: <span style="color:#7CFC00">${fmtMoney.format(dailyProfit)}</span> دولار<br>
-      📅 العائد الشهري التقريبي: <span style="color:#7CFC00">${fmtMoney.format(monthlyProfit)}</span> دولار
-    `;
-  }
+    // تحديث شارة النسبة
+    const badge = document.getElementById('dailyPctBadge');
+    const dailyPctText = document.getElementById('dailyPctText');
+    function setDailyPctText(){
+      const pct = new Intl.NumberFormat('en-US',{minimumFractionDigits:3,maximumFractionDigits:3}).format(PCT_DAILY);
+      badge.textContent = `النسبة اليومية ≈ ${pct}%`;
+      dailyPctText.textContent = `${pct}%`;
+    }
+    setDailyPctText();
 
-  // احسب تلقائيًا عند تغيير القيمة
-  invInput.addEventListener('input', () => {
-    // احسب فقط لو القيمة صحيحة
-    const inv = parseFloat(invInput.value);
-    if (!isNaN(inv) && inv >= 1500) calcAuto();
-    else msg.textContent = '';
-  });
-</script>
+    // الحاسبة الأوتوماتيكية
+    const invInput = document.getElementById('invUSD');
+    const msg = document.getElementById('calcMsg');
+    const fmtMoney = new Intl.NumberFormat('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+
+    function calcAuto(){
+      const inv = parseFloat(invInput.value);
+      if (isNaN(inv)){
+        msg.style.color='tomato';
+        msg.innerHTML='⚠️ الرجاء إدخال قيمة الاستثمار.';
+        return;
+      }
+      if (inv < 1500){
+        msg.style.color='tomato';
+        msg.innerHTML='🚫 الحد الأدنى للاستثمار هو 1500 دولار.';
+        return;
+      }
+      const monthlyProfit = inv * (PCT_MONTHLY/100);
+      const dailyProfit   = monthlyProfit / TRADING_DAYS;
+
+      msg.style.color = '#FFD700';
+      msg.innerHTML = `🏅 العائد اليومي: <span style="color:#7CFC00">${fmtMoney.format(dailyProfit)}</span> دولار<br>
+                       📅 العائد الشهري التقريبي: <span style="color:#7CFC00">${fmtMoney.format(monthlyProfit)}</span> دولار`;
+    }
+
+    // احسب تلقائيًا عند إدخال قيمة صحيحة
+    invInput.addEventListener('input', () => {
+      const v = parseFloat(invInput.value);
+      if (!isNaN(v) && v >= 1500) calcAuto(); else msg.textContent='';
+    });
+  </script>
+</body>
+</html>
