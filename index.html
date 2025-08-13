@@ -4,6 +4,15 @@
   <meta charset="utf-8" />
   <title>TREND KING</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- SEO / Open Graph -->
+  <meta name="description" content="TREND KING — نظام تداول منضبط بعوائد مستهدفة 30%–40% شهريًا مع إدارة مخاطر 10%. آلة حاسبة، تواصل مباشر، وملاحظات هامة للمستثمرين." />
+  <meta property="og:title" content="TREND KING" />
+  <meta property="og:description" content="نظام تداول منضبط وعوائد مستهدفة مع إدارة مخاطر." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/TREND-KING.jpg" />
+  <meta property="og:locale" content="ar_AR" />
+  <link rel="icon" href="images/favicon.ico" />
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     :root{
@@ -16,7 +25,8 @@
     }
     *{box-sizing:border-box}
     body{margin:0;background:linear-gradient(180deg,var(--bg1),var(--bg2));color:var(--text);font-family:"Tajawal","Segoe UI",system-ui,Arial,sans-serif}
-    a{color:#9bd1ff}
+    a{color:#9bd1ff;text-decoration:none}
+    a:hover{text-decoration:underline}
     .wrap{max-width:1050px;margin:auto;padding:22px}
 
     .title{margin:34px 12px 14px;font-size:clamp(28px,4.6vw,44px);color:var(--accent);text-align:center}
@@ -30,6 +40,9 @@
     .intro-text{font-size:1.6rem;font-weight:700;color:#ffcc00;text-align:center;margin:10px 0 6px;text-shadow:1px 1px 3px rgba(0,0,0,.4)}
     .btn{display:inline-block;margin:16px auto 6px;padding:14px 26px;border-radius:28px;background:var(--cta);color:#fff;font-weight:700;border:none;cursor:pointer}
     .btn:hover{background:var(--cta2)}
+    .btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+    /* Popup */
     .popup{display:none;position:fixed;bottom:80px;right:20px;background:rgba(0,0,0,.9);padding:18px;border-radius:12px;width:min(92vw,280px);text-align:center;z-index:50}
     .popup a{display:block;margin:10px 0;padding:10px;border-radius:30px;color:#fff;text-decoration:none;font-weight:600}
     .tiktok{background:#000}.whatsapp{background:#25D366}.telegram{background:#0088cc}
@@ -43,7 +56,7 @@
     .callout-info{border-inline-start:4px solid var(--info);background:var(--infobg);border-radius:10px;padding:12px 14px;margin-top:12px}
 
     pre{background:#0a1422;border:1px solid var(--border);border-radius:12px;padding:14px;color:#d1e7ff;direction:ltr;text-align:left;overflow:auto}
-    .watch-link{display:inline-flex;align-items:center;gap:8px;background:#0b1626;border:1px solid var(--border);padding:6px 10px;border-radius:10px;color:#9bd1ff;text-decoration:none;font-weight:700}
+    .watch-link{display:inline-flex;align-items:center;gap:8px;background:#0b1626;border:1px solid var(--border);padding:8px 12px;border-radius:10px;color:#9bd1ff;font-weight:700}
     .watch-link img{width:22px;height:22px;border-radius:4px;vertical-align:middle}
 
     .section-title{color:#FFD700;font-size:24px;text-align:center;margin:14px 0 10px}
@@ -52,6 +65,9 @@
     footer{margin:26px 0 16px;color:#99a7b6;font-size:13px;text-align:center}
 
     .calc-card{margin-top:20px;padding:20px;border-radius:12px;background:linear-gradient(145deg,#071322,#0e1b2b);box-shadow:0 0 12px rgba(0,0,0,0.3);text-align:center}
+
+    /* Focus visibility */
+    a:focus-visible, .watch-link:focus-visible {outline:2px solid var(--accent);outline-offset:3px;border-radius:8px}
   </style>
 </head>
 <body>
@@ -61,18 +77,19 @@
 
     <!-- الصفّ العلوي: LEFT - LOGO - RIGHT -->
     <div class="hero-logos">
-      <img src="images/LEFT.jpg" alt="LEFT">
-      <img src="images/TREND KING.jpg" alt="TREND KING Logo">
-      <img src="images/RIGHT.jpg" alt="RIGHT">
+      <img src="images/LEFT.jpg" alt="صورة يسار" loading="lazy" decoding="async" width="520" height="320">
+      <!-- تأكد من إعادة تسمية الملف إلى TREND-KING.jpg بلا مسافات -->
+      <img src="images/TREND-KING.jpg" alt="شعار TREND KING" loading="lazy" decoding="async" width="520" height="320">
+      <img src="images/RIGHT.jpg" alt="صورة يمين" loading="lazy" decoding="async" width="520" height="320">
     </div>
 
     <p class="intro-text">انطلاقة احترافية مع نظام تداول منضبط — عوائد مستهدفة من 30% إلى 40% شهريًا ومخاطرة لا تتجاوز 10%.</p>
 
     <!-- تواصل -->
     <div style="text-align:center">
-      <button class="btn" onclick="togglePopup()">تواصل معنا</button>
+      <button class="btn" aria-haspopup="dialog" aria-controls="popup" aria-expanded="false" onclick="togglePopup(event)">تواصل معنا</button>
     </div>
-    <div id="popup" class="popup">
+    <div id="popup" class="popup" role="dialog" aria-modal="true" aria-hidden="true">
       <a class="tiktok"   target="_blank" href="https://www.tiktok.com/@trendking07"><i class="fab fa-tiktok"></i> TikTok</a>
       <a class="whatsapp" target="_blank" href="https://wa.me/201064680034"><i class="fab fa-whatsapp"></i> WhatsApp</a>
       <a class="telegram" target="_blank" href="https://t.me/TRENDKING07"><i class="fab fa-telegram"></i> Telegram</a>
@@ -88,9 +105,9 @@
       </ul>
       <div class="callout">
         <b>📌 ملاحظة هامة:</b><br>
-        أقل محفظة للبـدء الفعلي: <b style="color:#FFD700;">2000 دولار</b>.<br>
+        أقل محفظة للبـدء الفعلي: <b style="color:#FFD700;">1500 دولار</b>.<br>
         محفظة 100 دولار: للمتابعة والمشاهدة فقط بهدف اختبار الأداء <b>وإدارة المخاطر</b>.<br>
-        📱 واتساب: <a href="https://wa.me/201064680034" target="_blank" style="color:#25D366;text-decoration:none;font-weight:700">00201064680034</a>
+        📱 واتساب: <a href="https://wa.me/201064680034" target="_blank" style="color:#25D366;font-weight:700">00201064680034</a>
       </div>
       <!-- الصندوق المستقل لحسابات Standard -->
       <div class="callout-info">
@@ -104,7 +121,7 @@
       <h2 style="color:#FFD700; margin-bottom:12px;">📊 احسب عائدك اليومي والشهري (بالدولار)</h2>
       <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; align-items:center; margin-bottom:12px;">
         <input type="number" id="invUSD" min="1500" step="0.01"
-               placeholder="قيمة الاستثمار ($)"
+               placeholder="قيمة الاستثمار ($) — الحد الأدنى 1500"
                style="padding:10px; width:260px; border-radius:8px; border:1px solid #2b3d55; background:#0b1626; color:#eaeef3; font-size:15px;">
         <span id="dailyPctBadge"
               style="display:inline-block; padding:8px 12px; border-radius:999px; background:#102036; border:1px dashed #355079; color:#cfe6ff; font-weight:700;">
@@ -112,12 +129,15 @@
         </span>
       </div>
       <button onclick="calcAuto()"
-              style="padding:10px 20px; font-size:15px; border:none; border-radius:8px; background:#FFD700; color:#000; font-weight:bold; cursor:pointer; transition:0.3s;">
+              class="btn" style="background:#FFD700;color:#000">
         احسب الآن
       </button>
       <p id="calcMsg" style="margin-top:15px; font-weight:700; font-size:16px;"></p>
-      <small style="color:#9bb3c9;">
+      <small style="color:#9bb3c9; display:block; margin-top:8px;">
         * الحد الأدنى للاستثمار: 1500$ — النسبة الشهرية المفترضة: 36.67% خلال 21 يوم تداول (≈ <span id="dailyPctText">1.746%</span> يوميًا)
+      </small>
+      <small style="color:#9bb3c9; display:block; margin-top:8px;">
+        ⚠️ الأداء السابق أو المستهدف لا يضمن نتائج مستقبلية. التداول عالي المخاطر وقد يؤدي إلى خسارة رأس المال.
       </small>
     </section>
 
@@ -132,22 +152,18 @@
 
     <!-- العوائد الشهرية -->
     <h2 class="section-title">العوائد الشهرية</h2>
-    <img class="divider-img" src="images/income_chart.jpg" alt="العوائد الشهرية">
+    <img class="divider-img" src="images/income_chart.jpg" alt="مخطط العوائد الشهرية" loading="lazy" decoding="async" width="900" height="420">
 
-    <!-- حساب المشاهدة -->
+    <!-- حساب المشاهدة (بدون إظهار بيانات حساسة) -->
     <section class="card">
-      <h2>📊 بيانات حساب المشاهدة (سِنت أمريكي)</h2>
-      <a class="watch-link" href="#" title="MT5 Watch">
-        <img src="images/ex-logo.jpg" alt="Exness"> MT5 Watch
+      <h2>📊 بيانات حساب المشاهدة</h2>
+      <p style="margin:0 0 10px">للحصول على بيانات المشاهدة (قراءة فقط):</p>
+      <a class="watch-link" href="https://wa.me/201064680034?text=%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA%20%D8%AD%D8%B3%D8%A7%D8%A8%20%D8%A7%D9%84%D9%85%D8%B4%D8%A7%D9%87%D8%AF%D8%A9" target="_blank" title="طلب بيانات المشاهدة">
+        <img src="images/ex-logo.jpg" alt="Exness"> <span>اطلب البيانات عبر واتساب <i class="fa-solid fa-lock"></i></span>
       </a>
-      <pre>
-Account Number: 157276506
-Password:       You@1212
-Server:         Exness-MT5Real19
-      </pre>
     </section>
 
-    <!-- طريقة الحساب (2000$) -->
+    <!-- طريقة الحساب (مثال 2000$) -->
     <section class="card">
       <h2>📈 كيف أحسب دخلي إذا بدأت بـ <span style="color:#ffe082">2000 دولار</span>؟</h2>
       <p>تابع أرباح حساب المشاهدة، واضرب الربح في نسبة الفرق بين المحفظتين.</p>
@@ -163,11 +179,37 @@ Server:         Exness-MT5Real19
   </div>
 
   <script>
-    function togglePopup(){
-      const el=document.getElementById('popup');
-      el.style.display = (el.style.display==='block') ? 'none' : 'block';
-    }
+    // Popup logic with accessibility
+    const popup = document.getElementById('popup');
+    const toggleBtn = document.querySelector('.btn[aria-controls="popup"]');
 
+    function openPopup(){
+      popup.style.display = 'block';
+      popup.setAttribute('aria-hidden','false');
+      toggleBtn.setAttribute('aria-expanded','true');
+      popup.querySelector('a')?.focus();
+    }
+    function closePopup(){
+      popup.style.display = 'none';
+      popup.setAttribute('aria-hidden','true');
+      toggleBtn.setAttribute('aria-expanded','false');
+      toggleBtn.focus();
+    }
+    function togglePopup(e){
+      e?.stopPropagation();
+      const isOpen = popup.style.display === 'block';
+      isOpen ? closePopup() : openPopup();
+    }
+    // click outside
+    document.addEventListener('click', (e)=>{
+      if (popup.style.display === 'block' && !popup.contains(e.target) && !e.target.closest('.btn')) {
+        closePopup();
+      }
+    });
+    // ESC key
+    document.addEventListener('keydown', (e)=>{ if (e.key === 'Escape' && popup.style.display === 'block') closePopup(); });
+
+    // Calculator
     const PCT_MONTHLY = 36.67, TRADING_DAYS = 21, PCT_DAILY = PCT_MONTHLY / TRADING_DAYS;
     const badge = document.getElementById('dailyPctBadge');
     const dailyPctText = document.getElementById('dailyPctText');
@@ -190,7 +232,7 @@ Server:         Exness-MT5Real19
       const dailyProfit   = monthlyProfit / TRADING_DAYS;
       msg.style.color = '#FFD700';
       msg.innerHTML = `🏅 العائد اليومي: <span style="color:#7CFC00">${fmtMoney.format(dailyProfit)}</span> دولار<br>
-                       📅 العائد الشهري التقريبي: <span style="color:#7CFC00">${fmtMoney.format(monthlyProfit)}</span> دولار`;
+                       📅 العائد الشهري التقريبي: <span style=\"color:#7CFC00\">${fmtMoney.format(monthlyProfit)}</span> دولار`;
     }
     invInput.addEventListener('input', () => {
       const v = parseFloat(invInput.value);
