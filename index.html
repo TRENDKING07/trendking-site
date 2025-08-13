@@ -12,25 +12,20 @@
       --accent:#f1c40f; --cta:#f39c12; --cta2:#d35400;
       --card:#0e1726; --card2:#142238; --border:#23344a;
       --warn:#f59e0b;
+      --info:#3b82f6; --infobg:#0b1628;
     }
     *{box-sizing:border-box}
     body{margin:0;background:linear-gradient(180deg,var(--bg1),var(--bg2));color:var(--text);font-family:"Tajawal","Segoe UI",system-ui,Arial,sans-serif}
     a{color:#9bd1ff}
     .wrap{max-width:1050px;margin:auto;padding:22px}
 
-    /* العنوان */
     .title{margin:34px 12px 14px;font-size:clamp(28px,4.6vw,44px);color:var(--accent);text-align:center}
     .brand{text-transform:uppercase;letter-spacing:.6px}
 
-    /* شريط الصور العلوي */
     .hero-logos{display:flex;justify-content:center;align-items:center;gap:22px;flex-wrap:wrap;margin:8px 0 6px}
     .hero-logos img{width:260px;max-width:30vw;height:auto;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.4);background:#0b1626;border:1px solid #1f2f45;object-fit:cover}
-    @media (max-width:820px){
-      .hero-logos img{max-width:44vw}
-    }
-    @media (max-width:540px){
-      .hero-logos img{max-width:88vw}
-    }
+    @media (max-width:820px){.hero-logos img{max-width:44vw}}
+    @media (max-width:540px){.hero-logos img{max-width:88vw}}
 
     .intro-text{font-size:1.6rem;font-weight:700;color:#ffcc00;text-align:center;margin:10px 0 6px;text-shadow:1px 1px 3px rgba(0,0,0,.4)}
     .btn{display:inline-block;margin:16px auto 6px;padding:14px 26px;border-radius:28px;background:var(--cta);color:#fff;font-weight:700;border:none;cursor:pointer}
@@ -43,7 +38,9 @@
     .card h2{margin:0 0 10px;color:#ffd166;font-size:clamp(20px,2.6vw,26px)}
     ul{margin:0;padding-inline-start:1.1rem}
     li{margin:.35rem 0}
+
     .callout{border-inline-start:4px solid var(--warn);background:#1b1405;border-radius:10px;padding:12px 14px;margin-top:10px}
+    .callout-info{border-inline-start:4px solid var(--info);background:var(--infobg);border-radius:10px;padding:12px 14px;margin-top:12px}
 
     pre{background:#0a1422;border:1px solid var(--border);border-radius:12px;padding:14px;color:#d1e7ff;direction:ltr;text-align:left;overflow:auto}
     .watch-link{display:inline-flex;align-items:center;gap:8px;background:#0b1626;border:1px solid var(--border);padding:6px 10px;border-radius:10px;color:#9bd1ff;text-decoration:none;font-weight:700}
@@ -54,7 +51,6 @@
 
     footer{margin:26px 0 16px;color:#99a7b6;font-size:13px;text-align:center}
 
-    /* بطاقة الحاسبة */
     .calc-card{margin-top:20px;padding:20px;border-radius:12px;background:linear-gradient(145deg,#071322,#0e1b2b);box-shadow:0 0 12px rgba(0,0,0,0.3);text-align:center}
   </style>
 </head>
@@ -96,12 +92,16 @@
         محفظة 100 دولار: للمتابعة والمشاهدة فقط بهدف اختبار الأداء <b>وإدارة المخاطر</b>.<br>
         📱 واتساب: <a href="https://wa.me/201064680034" target="_blank" style="color:#25D366;text-decoration:none;font-weight:700">00201064680034</a>
       </div>
+      <!-- الصندوق المستقل لحسابات Standard -->
+      <div class="callout-info">
+        <b style="color:#a7c7ff;">📌 ملاحظة خاصة بحسابات Standard</b><br>
+        للاستثمار في حسابات <b>Standard</b> على نفس الماستر، يجب أن يكون رصيد المحفظة <b style="color:#FFD700;">أعلى من 10,000 دولار</b>.
+      </div>
     </section>
 
     <!-- الحاسبة (36.67% شهريًا / 21 يوم) -->
     <section class="card calc-card">
       <h2 style="color:#FFD700; margin-bottom:12px;">📊 احسب عائدك اليومي والشهري (بالدولار)</h2>
-
       <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; align-items:center; margin-bottom:12px;">
         <input type="number" id="invUSD" min="1500" step="0.01"
                placeholder="قيمة الاستثمار ($)"
@@ -111,12 +111,10 @@
           النسبة اليومية ≈ 1.746%
         </span>
       </div>
-
       <button onclick="calcAuto()"
               style="padding:10px 20px; font-size:15px; border:none; border-radius:8px; background:#FFD700; color:#000; font-weight:bold; cursor:pointer; transition:0.3s;">
         احسب الآن
       </button>
-
       <p id="calcMsg" style="margin-top:15px; font-weight:700; font-size:16px;"></p>
       <small style="color:#9bb3c9;">
         * الحد الأدنى للاستثمار: 1500$ — النسبة الشهرية المفترضة: 36.67% خلال 21 يوم تداول (≈ <span id="dailyPctText">1.746%</span> يوميًا)
@@ -165,53 +163,35 @@ Server:         Exness-MT5Real19
   </div>
 
   <script>
-    // نافذة التواصل
     function togglePopup(){
       const el=document.getElementById('popup');
       el.style.display = (el.style.display==='block') ? 'none' : 'block';
     }
 
-    // ثوابت الحاسبة: 36.67% شهريًا / 21 يوم تداول
-    const PCT_MONTHLY = 36.67;
-    const TRADING_DAYS = 21;
-    const PCT_DAILY = PCT_MONTHLY / TRADING_DAYS; // ≈ 1.746%
-
-    // تحديث شارة النسبة
+    const PCT_MONTHLY = 36.67, TRADING_DAYS = 21, PCT_DAILY = PCT_MONTHLY / TRADING_DAYS;
     const badge = document.getElementById('dailyPctBadge');
     const dailyPctText = document.getElementById('dailyPctText');
     function setDailyPctText(){
       const pct = new Intl.NumberFormat('en-US',{minimumFractionDigits:3,maximumFractionDigits:3}).format(PCT_DAILY);
-      badge.textContent = `النسبة اليومية ≈ ${pct}%`;
-      dailyPctText.textContent = `${pct}%`;
+      if(badge) badge.textContent = `النسبة اليومية ≈ ${pct}%`;
+      if(dailyPctText) dailyPctText.textContent = `${pct}%`;
     }
     setDailyPctText();
 
-    // الحاسبة الأوتوماتيكية
     const invInput = document.getElementById('invUSD');
     const msg = document.getElementById('calcMsg');
     const fmtMoney = new Intl.NumberFormat('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
 
     function calcAuto(){
       const inv = parseFloat(invInput.value);
-      if (isNaN(inv)){
-        msg.style.color='tomato';
-        msg.innerHTML='⚠️ الرجاء إدخال قيمة الاستثمار.';
-        return;
-      }
-      if (inv < 1500){
-        msg.style.color='tomato';
-        msg.innerHTML='🚫 الحد الأدنى للاستثمار هو 1500 دولار.';
-        return;
-      }
+      if (isNaN(inv)){ msg.style.color='tomato'; msg.innerHTML='⚠️ الرجاء إدخال قيمة الاستثمار.'; return; }
+      if (inv < 1500){ msg.style.color='tomato'; msg.innerHTML='🚫 الحد الأدنى للاستثمار هو 1500 دولار.'; return; }
       const monthlyProfit = inv * (PCT_MONTHLY/100);
       const dailyProfit   = monthlyProfit / TRADING_DAYS;
-
       msg.style.color = '#FFD700';
       msg.innerHTML = `🏅 العائد اليومي: <span style="color:#7CFC00">${fmtMoney.format(dailyProfit)}</span> دولار<br>
                        📅 العائد الشهري التقريبي: <span style="color:#7CFC00">${fmtMoney.format(monthlyProfit)}</span> دولار`;
     }
-
-    // احسب تلقائيًا عند إدخال قيمة صحيحة
     invInput.addEventListener('input', () => {
       const v = parseFloat(invInput.value);
       if (!isNaN(v) && v >= 1500) calcAuto(); else msg.textContent='';
