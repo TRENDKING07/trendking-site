@@ -61,11 +61,13 @@
     .callout{border-inline-start:4px solid var(--warn);background:#1b1405;border-radius:10px;padding:12px 14px;margin-top:10px}
     .callout-info{border-inline-start:4px solid var(--info);background:var(--infobg);border-radius:10px;padding:12px 14px;margin-top:12px}
 
-    pre{background:#0a1422;border:1px solid var(--border);border-radius:12px;padding:14px;color:#d1e7ff;direction:ltr;text-align:left;overflow:auto}
-
-    /* رابط المتابعة (مع الشعار الصغير) */
-    .watch-link{display:inline-flex;align-items:center;gap:10px;background:#0b1626;border:1px solid var(--border);padding:8px 12px;border-radius:10px;color:#9bd1ff;font-weight:700}
-    .watch-link img{width:24px;height:24px;border-radius:4px;vertical-align:middle}
+    /* قسم المتابعة الجديد */
+    .watch-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+    .watch-badge{display:inline-block;background:#0b1626;border:1px solid var(--border);padding:8px;border-radius:12px}
+    .watch-badge img{display:block;width:74px;height:34px;object-fit:contain}
+    .watch-panel{display:block;margin-top:12px;padding:28px;border-radius:12px;border:1px solid var(--border);background:#0b1626;text-align:center;text-decoration:none}
+    .watch-panel span{font-weight:800;color:#9bd1ff;font-size:22px;letter-spacing:.5px}
+    .watch-panel:hover span{color:#ffffff}
 
     .section-title{color:#FFD700;font-size:24px;text-align:center;margin:14px 0 10px}
     .divider-img{display:block;margin:6px auto 20px;max-width:95%;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.45)}
@@ -160,22 +162,20 @@
     <h2 class="section-title">العوائد الشهرية</h2>
     <img class="divider-img" src="images/income_chart.jpg" alt="مخطط العوائد الشهرية" loading="lazy" decoding="async" width="900" height="420">
 
-    <!-- حساب المشاهدة -->
+    <!-- حساب المشاهدة (التعديل المطلوب) -->
     <section class="card">
-      <!-- العنوان الجديد مع الرابط -->
-      <h2>
-        للمُتابعة وتقييم الأداء — 
-        <a class="watch-link" href="ضع_الرابط_هنا" target="_blank" rel="noopener">
-          <img src="images/MYFXBOOK.jpg" alt="Myfxbook"> اضغط هنا
-        </a>
-      </h2>
+      <div class="watch-head">
+        <div class="watch-badge" title="Myfxbook">
+          <!-- اللوجو الصغير -->
+          <img src="images/MYFXBOOK.jpg" alt="Myfxbook">
+        </div>
+        <h2 style="margin:0;">للمُتابعة وتقييم الأداء</h2>
+      </div>
 
-      <!-- بيانات حساب المشاهدة تبقى كما هي -->
-      <pre>
-Account Number: 157276506
-Password:       You@1212
-Server:         Exness-MT5Real19
-      </pre>
+      <!-- المستطيل الكبير قابل للنقر وفي وسطه (اضغط هنا) -->
+      <a class="watch-panel" href="ضع_الرابط_هنا" target="_blank" rel="noopener">
+        <span>اضغط هنا</span>
+      </a>
     </section>
 
     <!-- FAQ النهائي -->
@@ -280,7 +280,7 @@ Server:         Exness-MT5Real19
       const dailyProfit   = monthlyProfit / TRADING_DAYS;
       msg.style.color = '#FFD700';
       msg.innerHTML = `🏅 العائد اليومي: <span style="color:#7CFC00">${fmtMoney.format(dailyProfit)}</span> دولار<br>
-                       📅 العائد الشهري التقريبي: <span style=\"color:#7CFC00\">${fmtMoney.format(monthlyProfit)}</span> دولار`;
+                       📅 العائد الشهري التقريبي: <span style="color:#7CFC00">${fmtMoney.format(monthlyProfit)}</span> دولار`;
     }
     invInput.addEventListener('input', () => {
       const v = parseFloat(invInput.value);
