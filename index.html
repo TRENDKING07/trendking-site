@@ -5,15 +5,11 @@
   <title>TREND KING — التسجيل والاشتراك في الناسخ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- خط ويب -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
 
-  <!-- أيقونة -->
   <link rel="icon" href="images/TREND KING.jpg">
-
-  <!-- أيقونات -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <meta name="description" content="سجّل تحت الوكالة واشترك في ناسخ TREND KING. الحد الأدنى 2500$ — كل 2500$ = 120$ يوميًا (تقريبًا 21 يوم تداول). زر تسجيل مباشر + QR + متابعة النتائج.">
@@ -37,22 +33,25 @@
     a:hover{text-decoration:underline}
     .wrap{max-width:1100px;margin:auto;padding:22px}
     .title{margin:28px 0 10px;text-align:center;font-weight:800;font-size:clamp(26px,4.8vw,44px);color:var(--accent);letter-spacing:.6px}
+
     .hero-logos{display:flex;justify-content:center;align-items:center;gap:22px;flex-wrap:wrap}
     .hero-logos img{width:260px;max-width:32vw;height:auto;border-radius:14px;box-shadow:0 10px 26px rgba(0,0,0,.35);background:#0b1626;border:1px solid #1f2f45;object-fit:cover}
     @media (max-width:640px){.hero-logos img{max-width:85vw}}
 
     .intro{font-size:1.25rem;text-align:center;margin:12px 0 6px}
+
     .card{background:linear-gradient(180deg,var(--card),var(--card2));border:1px solid var(--border);border-radius:18px;padding:20px;margin-top:18px;box-shadow:0 14px 30px rgba(0,0,0,.25)}
     .card h2{margin:0 0 12px;color:#ffd166;font-size:clamp(20px,2.6vw,26px)}
     .btn{display:inline-flex;gap:10px;align-items:center;justify-content:center;padding:14px 22px;border-radius:32px;background:var(--cta);color:#fff;font-weight:800;border:none;cursor:pointer}
     .btn:hover{background:var(--cta2)}
     .btn-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 
-    /* زر التسجيل */
+    /* التسجيل + QR */
     .reg-box{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between}
     .reg-cta{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
-    .qr{width:140px;height:140px;border-radius:14px;border:1px dashed #33507a;background:#0b1626;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .qr{width:160px;height:160px;border-radius:14px;border:1px dashed #33507a;background:#0b1626;display:flex;align-items:center;justify-content:center;overflow:hidden}
     .qr img{width:100%;height:100%;object-fit:cover}
+    .qr .fallback{color:#86a2c5;font-size:14px;opacity:.8;padding:8px;text-align:center}
 
     /* الحاسبة */
     .calc{display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap}
@@ -66,7 +65,7 @@
     tbody td{background:#0b1626;border-bottom:1px solid #1b2a42;padding:10px}
     tbody tr:nth-child(even) td{background:#0f1c2f}
 
-    /* قسم المتابعة */
+    /* المتابعة */
     .watch-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
     .watch-badge{display:inline-block;background:#0b1626;border:1px solid var(--border);padding:6px 10px;border-radius:10px}
     .watch-badge img{width:70px;height:30px;object-fit:contain;border-radius:6px}
@@ -74,11 +73,16 @@
     .watch-panel span{font-weight:800;color:#9bd1ff;font-size:20px}
     .watch-panel:hover span{color:#ffffff}
 
-    /* خطوات التسجيل */
+    /* خطوات */
     .grid{display:grid;grid-template-columns:1fr;gap:12px}
     .step{display:flex;gap:12px;align-items:center;background:#0b1626;border:1px solid var(--border);padding:12px;border-radius:12px}
     .step img{width:74px;height:54px;border-radius:10px;object-fit:cover;border:1px solid #2a3e5a}
     .subtitle{color:#a9bfd6;margin:4px 0 0}
+
+    /* تواصل */
+    .popup{display:none;position:fixed;bottom:80px;right:20px;background:rgba(0,0,0,.92);padding:18px;border-radius:12px;width:min(92vw,280px);text-align:center;z-index:50}
+    .popup a{display:block;margin:10px 0;padding:10px;border-radius:30px;color:#fff;text-decoration:none;font-weight:700}
+    .tiktok{background:#000}.whatsapp{background:#25D366}.telegram{background:#0088cc}
 
     footer{margin:28px 0 12px;text-align:center;color:#97a7ba;font-size:13px}
   </style>
@@ -98,7 +102,7 @@
       القاعدة الجديدة: <b>كل 2500$ = 120$ يوميًا</b> (تقريبًا 21 يوم تداول شهريًا).
     </p>
 
-    <!-- التسجيل -->
+    <!-- التسجيل + QR -->
     <section class="card">
       <h2>🚀 ابدأ الآن: التسجيل تحت الوكالة والاشتراك في الناسخ</h2>
       <div class="reg-box">
@@ -107,10 +111,16 @@
             <i class="fa-solid fa-user-plus"></i> تسجيل / فتح حساب
           </a>
           <small class="note">الوسيط: <b>Exness</b> • نوع الحساب الموصى به: <b>Cent</b> • الحد الأدنى للإيداع: <b>2500$</b></small>
+          <!-- زر فتح نافذة التواصل -->
+          <button class="btn" aria-haspopup="dialog" aria-controls="popup" aria-expanded="false" onclick="togglePopup(event)">
+            <i class="fa-solid fa-comments"></i> تواصل معنا
+          </button>
         </div>
+
+        <!-- QR: ضع images/qr.png ليظهر -->
         <div class="qr" title="QR للتسجيل">
-          <!-- ضع صورة QR باسم qr.png في مجلد images -->
-          <img src="images/qr.png" alt="QR للتسجيل">
+          <img src="images/qr.png" alt="QR للتسجيل" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <div class="fallback" style="display:none">ضع صورة QR باسم <b>qr.png</b><br>داخل مجلد <b>images/</b></div>
         </div>
       </div>
 
@@ -132,7 +142,7 @@
       <small class="note">المعادلة: كل 2500$ ↔ 120$ يوميًا. الشهر يُحتسب على 21 يوم تداول تقريبي.</small>
     </section>
 
-    <!-- جدول عوائد نموذجي (بالنظام الجديد) -->
+    <!-- جدول عوائد (أمثلة) -->
     <section class="card">
       <h2>📈 أمثلة سريعة للعوائد (النظام الجديد)</h2>
       <table aria-label="جدول أمثلة العوائد">
@@ -143,9 +153,7 @@
             <th>الدخل الشهري التقريبي (21 يوم) ($)</th>
           </tr>
         </thead>
-        <tbody id="tblBody">
-          <!-- يملأ بالـ JS حسب القائمة أدناه -->
-        </tbody>
+        <tbody id="tblBody"></tbody>
       </table>
       <small class="note">هذه أمثلة تقريبية — الأداء السابق لا يضمن نتائج مستقبلية.</small>
     </section>
@@ -189,7 +197,39 @@
       </div>
     </section>
 
+    <!-- الأسئلة الشائعة -->
+    <section class="card" aria-label="الأسئلة الشائعة">
+      <h2>❓ الأسئلة الشائعة</h2>
+      <details>
+        <summary>هل الأرباح مضمونة؟</summary>
+        <p>لا توجد أرباح مضمونة؛ التداول عالي المخاطر. نعمل بإستراتيجية ونسخ منضبط وإدارة مخاطر.</p>
+      </details>
+      <details>
+        <summary>ما الحد الأدنى للحساب؟</summary>
+        <p>الحد الأدنى للنسخ الفعلي هو <b>2500$</b> على حساب سنت.</p>
+      </details>
+      <details>
+        <summary>كيف يتم حساب الدخل؟</summary>
+        <p>كل <b>2500$</b> تقابل <b>120$</b> يوميًا تقريبًا، والشهر يُقدّر بـ <b>21</b> يوم تداول.</p>
+      </details>
+      <details>
+        <summary>هل هناك عمولة إدارة؟</summary>
+        <p>لا توجد عمولة إجبارية. بعد استرداد رأس المال، توجد مساهمة <b>اختيارية</b> بين 0% و10% من الأرباح تقديرًا للأداء.</p>
+      </details>
+      <details>
+        <summary>كيف أتواصل؟</summary>
+        <p>من زر <b>تواصل معنا</b> بالأعلى (TikTok / WhatsApp / Telegram).</p>
+      </details>
+    </section>
+
     <footer>© 2025 — TREND KING • وكالة ونسخ صفقات • إدارة مخاطر منضبطة</footer>
+  </div>
+
+  <!-- نافذة التواصل -->
+  <div id="popup" class="popup" role="dialog" aria-modal="true" aria-hidden="true">
+    <a class="tiktok"   target="_blank" href="https://www.tiktok.com/@trendking07"><i class="fab fa-tiktok"></i> TikTok</a>
+    <a class="whatsapp" target="_blank" href="https://wa.me/201064680034"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <a class="telegram" target="_blank" href="https://t.me/TRENDKING07"><i class="fab fa-telegram"></i> Telegram</a>
   </div>
 
   <script>
@@ -199,8 +239,8 @@
       const out = document.getElementById('res');
       if(isNaN(v)){ out.innerHTML = 'أدخل المبلغ من فضلك.'; return; }
       if(v < 2500){ out.innerHTML = 'الحد الأدنى للحساب والنسخ هو 2500$.'; return; }
-      const daily = (v/2500)*120; // خطي
-      const monthly = daily * 21;  // 21 يوم تداول تقريبي
+      const daily = (v/2500)*120;
+      const monthly = daily * 21;
       const f = n => n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
       out.innerHTML = `الدخل اليومي: <span style="color:var(--good)">${f(daily)}</span> $<br>
                        الدخل الشهري (تقريبًا): <span style="color:var(--good)">${f(monthly)}</span> $`;
@@ -219,6 +259,14 @@
         tbody.appendChild(tr);
       });
     })();
+
+    // popup تواصل
+    const popup = document.getElementById('popup');
+    function openPopup(){ popup.style.display='block'; popup.setAttribute('aria-hidden','false'); }
+    function closePopup(){ popup.style.display='none'; popup.setAttribute('aria-hidden','true'); }
+    function togglePopup(e){ e?.stopPropagation(); (popup.style.display==='block')?closePopup():openPopup(); }
+    document.addEventListener('click',(e)=>{ if(popup.style.display==='block' && !popup.contains(e.target) && !e.target.closest('.btn')) closePopup(); });
+    document.addEventListener('keydown',(e)=>{ if(e.key==='Escape' && popup.style.display==='block') closePopup(); });
   </script>
 </body>
 </html>
