@@ -2,285 +2,223 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
-  <title>TREND KING</title>
+  <title>TREND KING — التسجيل والاشتراك في الناسخ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Web Font & SEO / Open Graph -->
+  <!-- خط ويب -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
 
-  <meta name="description" content="TREND KING — سجل تحت الوكالة واشترك في ناسخ TREND KING. كل 2500$ ≈ 120$ يوميًا (21 يوم تداول). متابعة نتائج النسخ عبر Myfxbook." />
-  <meta property="og:title" content="TREND KING" />
-  <meta property="og:description" content="سجل تحت الوكالة واشترك في ناسخ TREND KING. كل 2500$ ≈ 120$ يوميًا." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="images/TREND KING.jpg" />
-  <meta property="og:locale" content="ar_AR" />
-  <link rel="icon" href="images/favicon.ico" />
+  <!-- أيقونة -->
+  <link rel="icon" href="images/TREND KING.jpg">
 
+  <!-- أيقونات -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <meta name="description" content="سجّل تحت الوكالة واشترك في ناسخ TREND KING. الحد الأدنى 2500$ — كل 2500$ = 120$ يوميًا (تقريبًا 21 يوم تداول). زر تسجيل مباشر + QR + متابعة النتائج.">
+  <meta property="og:title" content="TREND KING — التسجيل والاشتراك في الناسخ">
+  <meta property="og:description" content="كل 2500$ = 120$ يوميًا. اشترك في الناسخ الآن وتابع الأداء على Myfxbook.">
+  <meta property="og:image" content="images/TREND KING.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ar_AR">
+
   <style>
     :root{
-      --bg1:#1e1e2f; --bg2:#2c3e50;
+      --bg1:#1e1e2f; --bg2:#2b3a4f;
       --text:#eaeef3; --muted:#c7d1db;
       --accent:#f1c40f; --cta:#f39c12; --cta2:#d35400;
-      --card:#0e1726; --card2:#142238; --border:#23344a;
-      --warn:#f59e0b; --info:#3b82f6; --infobg:#0b1628;
-      --good:#7CFC00;
+      --card:#0e1726; --card2:#152238; --border:#223247;
+      --good:#7CFC00; --warn:#f59e0b; --info:#3b82f6;
     }
     *{box-sizing:border-box}
     body{margin:0;background:linear-gradient(180deg,var(--bg1),var(--bg2));color:var(--text);font-family:'Tajawal','Segoe UI',system-ui,Arial,sans-serif}
     a{color:#9bd1ff;text-decoration:none}
     a:hover{text-decoration:underline}
-    a:focus-visible, .btn:focus-visible, .watch-link:focus-visible {outline:2px solid var(--accent);outline-offset:3px;border-radius:8px}
-    .wrap{max-width:1050px;margin:auto;padding:22px}
+    .wrap{max-width:1100px;margin:auto;padding:22px}
+    .title{margin:28px 0 10px;text-align:center;font-weight:800;font-size:clamp(26px,4.8vw,44px);color:var(--accent);letter-spacing:.6px}
+    .hero-logos{display:flex;justify-content:center;align-items:center;gap:22px;flex-wrap:wrap}
+    .hero-logos img{width:260px;max-width:32vw;height:auto;border-radius:14px;box-shadow:0 10px 26px rgba(0,0,0,.35);background:#0b1626;border:1px solid #1f2f45;object-fit:cover}
+    @media (max-width:640px){.hero-logos img{max-width:85vw}}
 
-    .title{margin:34px 12px 14px;font-size:clamp(28px,4.6vw,44px);color:var(--accent);text-align:center}
-    .brand{text-transform:uppercase;letter-spacing:.6px}
-
-    .hero-logos{display:flex;justify-content:center;align-items:center;gap:22px;flex-wrap:wrap;margin:8px 0 6px}
-    .hero-logos img{width:260px;max-width:30vw;height:auto;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.4);background:#0b1626;border:1px solid #1f2f45;object-fit:cover;transition:transform .3s}
-    .hero-logos img:hover{transform:scale(1.03)}
-    @media (max-width:820px){.hero-logos img{max-width:44vw}}
-    @media (max-width:540px){.hero-logos img{max-width:88vw}}
-
-    .intro-text{font-size:1.4rem;font-weight:700;color:#ffcc00;text-align:center;margin:10px 0 6px;text-shadow:1px 1px 3px rgba(0,0,0,.4)}
-    .btn{display:inline-block;margin:10px auto;padding:12px 22px;border-radius:28px;background:var(--cta);color:#fff;font-weight:700;border:none;cursor:pointer}
+    .intro{font-size:1.25rem;text-align:center;margin:12px 0 6px}
+    .card{background:linear-gradient(180deg,var(--card),var(--card2));border:1px solid var(--border);border-radius:18px;padding:20px;margin-top:18px;box-shadow:0 14px 30px rgba(0,0,0,.25)}
+    .card h2{margin:0 0 12px;color:#ffd166;font-size:clamp(20px,2.6vw,26px)}
+    .btn{display:inline-flex;gap:10px;align-items:center;justify-content:center;padding:14px 22px;border-radius:32px;background:var(--cta);color:#fff;font-weight:800;border:none;cursor:pointer}
     .btn:hover{background:var(--cta2)}
-    .btn-wide{display:inline-block; width:100%; text-align:center}
+    .btn-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 
-    /* Popup */
-    .popup{display:none;position:fixed;bottom:80px;right:20px;background:rgba(0,0,0,.9);padding:18px;border-radius:12px;width:min(92vw,280px);text-align:center;z-index:50}
-    .popup a{display:block;margin:10px 0;padding:10px;border-radius:30px;color:#fff;text-decoration:none;font-weight:600}
-    .tiktok{background:#000}.whatsapp{background:#25D366}.telegram{background:#0088cc}
+    /* زر التسجيل */
+    .reg-box{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between}
+    .reg-cta{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+    .qr{width:140px;height:140px;border-radius:14px;border:1px dashed #33507a;background:#0b1626;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .qr img{width:100%;height:100%;object-fit:cover}
 
-    .card{background:linear-gradient(180deg,var(--card),var(--card2));border:1px solid var(--border);border-radius:18px;padding:22px;margin-top:18px;box-shadow:0 12px 30px rgba(0,0,0,.25)}
-    .card h2{margin:0 0 10px;color:#ffd166;font-size:clamp(20px,2.6vw,26px)}
-    .subtitle{color:#cfe6ff;margin-top:6px;font-size:15px}
-    ul{margin:0;padding-inline-start:1.1rem}
-    li{margin:.35rem 0}
+    /* الحاسبة */
+    .calc{display:flex;gap:14px;align-items:center;justify-content:center;flex-wrap:wrap}
+    .calc input{padding:10px 12px;border-radius:10px;border:1px solid #2c4260;background:#0b1626;color:var(--text);width:240px}
+    .result{margin-top:10px;text-align:center;font-weight:800}
+    small.note{color:#9bb3c9;display:block;margin-top:6px}
 
-    .callout{border-inline-start:4px solid var(--warn);background:#1b1405;border-radius:10px;padding:12px 14px;margin-top:10px}
-    .callout-info{border-inline-start:4px solid var(--info);background:var(--infobg);border-radius:10px;padding:12px 14px;margin-top:12px}
+    /* جدول العوائد */
+    table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:12px;margin-top:10px}
+    thead th{background:#10233b;color:#ffd166;padding:10px;border-bottom:1px solid #1e314a}
+    tbody td{background:#0b1626;border-bottom:1px solid #1b2a42;padding:10px}
+    tbody tr:nth-child(even) td{background:#0f1c2f}
 
-    .grid{display:grid;gap:14px}
-    @media (min-width:820px){.grid-2{grid-template-columns:1fr 1fr}}
-
-    /* watch / myfxbook */
+    /* قسم المتابعة */
     .watch-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-    .watch-badge{display:inline-block;background:#0b1626;border:1px solid var(--border);padding:8px;border-radius:12px}
-    .watch-badge img{display:block;width:74px;height:34px;object-fit:contain}
-    .watch-panel{display:block;margin-top:10px;padding:18px;border-radius:12px;border:1px solid var(--border);background:#0b1626;text-align:center;text-decoration:none}
-    .watch-panel span{font-weight:800;color:#9bd1ff;font-size:20px;letter-spacing:.4px}
+    .watch-badge{display:inline-block;background:#0b1626;border:1px solid var(--border);padding:6px 10px;border-radius:10px}
+    .watch-badge img{width:70px;height:30px;object-fit:contain;border-radius:6px}
+    .watch-panel{display:block;margin-top:12px;padding:22px;border-radius:12px;border:1px solid var(--border);background:#0b1626;text-align:center;text-decoration:none}
+    .watch-panel span{font-weight:800;color:#9bd1ff;font-size:20px}
     .watch-panel:hover span{color:#ffffff}
 
-    .section-title{color:#FFD700;font-size:24px;text-align:center;margin:14px 0 10px}
-    .divider-img{display:block;margin:6px auto 20px;max-width:95%;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.45)}
+    /* خطوات التسجيل */
+    .grid{display:grid;grid-template-columns:1fr;gap:12px}
+    .step{display:flex;gap:12px;align-items:center;background:#0b1626;border:1px solid var(--border);padding:12px;border-radius:12px}
+    .step img{width:74px;height:54px;border-radius:10px;object-fit:cover;border:1px solid #2a3e5a}
+    .subtitle{color:#a9bfd6;margin:4px 0 0}
 
-    /* calculator */
-    .calc-card{margin-top:20px;padding:20px;border-radius:12px;background:linear-gradient(145deg,#071322,#0e1b2b);box-shadow:0 0 12px rgba(0,0,0,0.3);text-align:center}
-    .calc-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;align-items:center;margin-bottom:12px}
-    .calc-input{padding:10px;width:260px;border-radius:8px;border:1px solid #2b3d55;background:#0b1626;color:#eaeef3;font-size:15px}
-    .chip{display:inline-block;padding:8px 12px;border-radius:999px;background:#102036;border:1px dashed #355079;color:#cfe6ff;font-weight:700}
-
-    /* table */
-    table{width:100%;border-collapse:collapse;margin-top:8px}
-    th,td{border:1px solid #2b3d55;padding:10px;text-align:center}
-    th{background:#102036;color:#cfe6ff}
-    tr:nth-child(even){background:#0b1626}
-    tr:nth-child(odd){background:#0e1826}
-
-    /* steps */
-    .step{display:flex;gap:14px;align-items:flex-start;background:#0b1626;border:1px solid #22334a;border-radius:12px;padding:12px}
-    .step img{width:140px;height:90px;object-fit:cover;border-radius:8px;border:1px solid #21324a;background:#0a1422}
-    .step strong{color:#ffd166}
-
-    footer{margin:26px 0 16px;color:#99a7b6;font-size:13px;text-align:center}
+    footer{margin:28px 0 12px;text-align:center;color:#97a7ba;font-size:13px}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <!-- HERO -->
-    <h1 class="title">مرحبًا بك في موقع <span class="brand">TREND KING</span></h1>
 
-    <!-- الصفّ العلوي: LEFT - LOGO - RIGHT -->
+    <!-- العنوان + الشعار -->
+    <h1 class="title">TREND KING</h1>
     <div class="hero-logos">
-      <img src="images/LEFT.jpg" alt="LEFT" loading="lazy" decoding="async" width="520" height="320">
-      <img src="images/TREND KING.jpg" alt="TREND KING Logo" loading="lazy" decoding="async" width="520" height="320">
-      <img src="images/RIGHT.jpg" alt="RIGHT" loading="lazy" decoding="async" width="520" height="320">
+      <img src="images/LEFT.jpg" alt="LEFT">
+      <img src="images/TREND KING.jpg" alt="TREND KING Logo">
+      <img src="images/RIGHT.jpg" alt="RIGHT">
     </div>
+    <p class="intro">
+      سجِّل تحت الوكالة واشترك في ناسخ <b>TREND KING</b> — الحد الأدنى <b>2500$</b>.  
+      القاعدة الجديدة: <b>كل 2500$ = 120$ يوميًا</b> (تقريبًا 21 يوم تداول شهريًا).
+    </p>
 
-    <p class="intro-text">سجّل تحت الوكالة واشترك في ناسخ <b>TREND KING</b> — القاعدة: كل <b>2500$</b> ≈ <b>120$</b> يوميًا (على 21 يوم تداول).</p>
-
-    <!-- CTA التسجيل + QR -->
+    <!-- التسجيل -->
     <section class="card">
-      <h2>🚀 ابدأ الآن — التسجيل تحت الوكالة</h2>
-      <p class="subtitle">الحد الأدنى لبدء النسخ: <b style="color:#FFD700">2500 دولار</b> (الحساب بالسِنت مرحّب به).</p>
-      <div class="grid grid-2">
-        <div>
-          <a class="btn btn-wide" target="_blank" rel="noopener" href="https://one.exnessonelink.com/a/tpnagpna">
-            سجّل الآن تحت الوكالة
+      <h2>🚀 ابدأ الآن: التسجيل تحت الوكالة والاشتراك في الناسخ</h2>
+      <div class="reg-box">
+        <div class="reg-cta">
+          <a class="btn" href="https://one.exnessonelink.com/a/tpnagpna" target="_blank" rel="noopener">
+            <i class="fa-solid fa-user-plus"></i> تسجيل / فتح حساب
           </a>
-          <div class="callout" style="margin-top:12px">
-            <b>ملاحظة عادلة (اختيارية):</b><br>
-            بعد استرداد العميل لمبلغ الإيداع كاملًا، قد تكون هناك مشاركة أرباح تقديرية <b>من 0% حتى 10%</b> من الأرباح
-            <u>حسب كرم العميل ورضاه عن الأداء</u>. <b>ليست إجبارية.</b>
-          </div>
+          <small class="note">الوسيط: <b>Exness</b> • نوع الحساب الموصى به: <b>Cent</b> • الحد الأدنى للإيداع: <b>2500$</b></small>
         </div>
-        <div style="text-align:center">
-          <p style="margin:0 0 8px">أو امسح الـ QR للتسجيل:</p>
-          <!-- QR من رابط التسجيل -->
-          <img alt="QR للتسجيل" width="220" height="220"
-               src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Fone.exnessonelink.com%2Fa%2Ftpnagpna">
-          <p style="font-size:12px;color:#9bb3c9;margin-top:6px">يفتح نفس رابط التسجيل أعلاه.</p>
+        <div class="qr" title="QR للتسجيل">
+          <!-- ضع صورة QR باسم qr.png في مجلد images -->
+          <img src="images/qr.png" alt="QR للتسجيل">
         </div>
       </div>
-    </section>
 
-    <!-- خطوات التسجيل (شاشة شرح) -->
-    <section class="card">
-      <h2>🧭 خطوات التسجيل والربط بالناسخ</h2>
-      <div class="grid">
-        <div class="step">
-          <img src="images/step1.jpg" alt="لقطة شاشة — إنشاء حساب" onerror="this.style.opacity=.25;this.alt='أضف image: images/step1.jpg'">
-          <div>
-            <strong>١) أنشئ حسابك في المنصة.</strong>
-            <p class="subtitle">من خلال زر التسجيل أو الـ QR — أكمل البيانات وتفعيل البريد.</p>
-          </div>
-        </div>
-        <div class="step">
-          <img src="images/step2.jpg" alt="لقطة — فتح محفظة سنت وإيداع" onerror="this.style.opacity=.25;this.alt='أضف image: images/step2.jpg'">
-          <div>
-            <strong>٢) افتح حساب سنت وأودِع المبلغ.</strong>
-            <p class="subtitle">الحد الأدنى للنسخ 2500$ — يمكنك الإيداع بطرق متعددة.</p>
-          </div>
-        </div>
-        <div class="step">
-          <img src="images/step3.jpg" alt="لقطة — الانضمام لناسخ TREND KING" onerror="this.style.opacity=.25;this.alt='أضف image: images/step3.jpg'">
-          <div>
-            <strong>٣) انضم إلى ناسخ TREND KING.</strong>
-            <p class="subtitle">سيتم الربط عبر الماستر — بعدها كل الصفقات تُنسخ تلقائيًا لحسابك.</p>
-          </div>
-        </div>
+      <div class="card" style="margin-top:14px">
+        <b>📌 ملاحظة ودّية:</b>
+        بعد استرداد العميل لمبلغ الإيداع (رأس المال)، تكون هناك مساهمة اختيارية تتراوح بين <b>0% إلى 10%</b> من الأرباح
+        تقديرًا للأداء. <u>المساهمة غير إجبارية</u> وتعتمد على رضا العميل وكرمه.
       </div>
     </section>
 
     <!-- الحاسبة الجديدة -->
-    <section class="card calc-card">
-      <h2 style="color:#FFD700; margin-bottom:12px;">📊 احسب عائدك (بالدولار)</h2>
-      <div class="calc-row">
-        <input type="number" id="invUSD" min="2500" step="1"
-               placeholder="قيمة الاستثمار ($) — الحد الأدنى 2500"
-               class="calc-input">
-        <span class="chip">القاعدة: كل 2500$ ≈ 120$ يوميًا</span>
+    <section class="card">
+      <h2>📊 احسب دخلك اليومي/الشهري</h2>
+      <div class="calc">
+        <input id="amount" type="number" min="2500" step="1" placeholder="أدخل المبلغ بالدولار (الحد الأدنى 2500)">
+        <button class="btn" onclick="calc()"><i class="fa-solid fa-calculator"></i> احسب</button>
       </div>
-      <button id="calcBtn" class="btn" style="background:#FFD700;color:#000">احسب الآن</button>
-      <p id="calcMsg" style="margin-top:15px; font-weight:700; font-size:16px;"></p>
-      <small style="color:#9bb3c9; display:block; margin-top:8px;">
-        يفترض 21 يوم تداول في الشهر. الأداء السابق لا يضمن النتائج المستقبلية.
-      </small>
+      <div id="res" class="result"></div>
+      <small class="note">المعادلة: كل 2500$ ↔ 120$ يوميًا. الشهر يُحتسب على 21 يوم تداول تقريبي.</small>
     </section>
 
-    <!-- جدول العوائد الشهرية -->
+    <!-- جدول عوائد نموذجي (بالنظام الجديد) -->
     <section class="card">
-      <h2>📈 العوائد الشهرية (تقديرية)</h2>
-      <p class="subtitle">المعادلة: <b>اليومي = 120 × (رأس المال ÷ 2500)</b> — الشهري ≈ <b>اليومي × 21</b>.</p>
-      <table>
+      <h2>📈 أمثلة سريعة للعوائد (النظام الجديد)</h2>
+      <table aria-label="جدول أمثلة العوائد">
         <thead>
           <tr>
-            <th>Capital ($)</th>
-            <th>Daily Income ($)</th>
-            <th>Monthly Income ($)</th>
-            <th>Monthly ROI (%)</th>
+            <th>رأس المال ($)</th>
+            <th>الدخل اليومي ($)</th>
+            <th>الدخل الشهري التقريبي (21 يوم) ($)</th>
           </tr>
         </thead>
-        <tbody id="returnsBody">
-          <!-- يُملأ بالسكريبت -->
+        <tbody id="tblBody">
+          <!-- يملأ بالـ JS حسب القائمة أدناه -->
         </tbody>
       </table>
+      <small class="note">هذه أمثلة تقريبية — الأداء السابق لا يضمن نتائج مستقبلية.</small>
     </section>
 
-    <!-- متابعة نتائج النسخ -->
+    <!-- المتابعة على Myfxbook -->
     <section class="card">
       <div class="watch-head">
-        <div class="watch-badge" title="Myfxbook">
-          <img src="images/MYFXBOOK.jpg" alt="Myfxbook">
-        </div>
-        <h2 style="margin:0;">لمتابعة نتائج النسخ</h2>
+        <div class="watch-badge"><img src="images/MYFXBOOK.jpg" alt="Myfxbook"></div>
+        <h2 style="margin:0">للمتابعة وتقييم الأداء</h2>
       </div>
       <a class="watch-panel" href="https://www.myfxbook.com/members/TREND07/trend-king/11665244" target="_blank" rel="noopener">
-        <span>افتح لوحة نتائج النسخ على Myfxbook</span>
+        <span>لمتابعة نتائج النسخ</span>
       </a>
     </section>
 
-    <!-- تواصل -->
+    <!-- خطوات التسجيل والربط -->
     <section class="card">
-      <h2>📞 تواصل سريع</h2>
-      <div style="text-align:center">
-        <button class="btn" aria-haspopup="dialog" aria-controls="popup" aria-expanded="false" onclick="togglePopup(event)">فتح قنوات التواصل</button>
-      </div>
-      <div id="popup" class="popup" role="dialog" aria-modal="true" aria-hidden="true">
-        <a class="tiktok"   target="_blank" href="https://www.tiktok.com/@trendking07"><i class="fab fa-tiktok"></i> TikTok</a>
-        <a class="whatsapp" target="_blank" href="https://wa.me/201064680034"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-        <a class="telegram" target="_blank" href="https://t.me/TRENDKING07"><i class="fab fa-telegram"></i> Telegram</a>
+      <h2>🧭 خطوات التسجيل والربط بالناسخ</h2>
+      <div class="grid">
+        <div class="step">
+          <img src="images/TREND KING.jpg" alt="TREND KING">
+          <div>
+            <strong>١) أنشئ حسابك في المنصة.</strong>
+            <p class="subtitle">من خلال زر التسجيل أو QR — أكمل البيانات وتفعيل البريد.</p>
+          </div>
+        </div>
+        <div class="step">
+          <img src="images/TREND KING.jpg" alt="TREND KING">
+          <div>
+            <strong>٢) افتح حساب سنت وأودِع المبلغ.</strong>
+            <p class="subtitle">الحد الأدنى 2500$ — الإيداع بطرق متعددة ويُفضّل بطاقة/محفظة سريعة.</p>
+          </div>
+        </div>
+        <div class="step">
+          <img src="images/TREND KING.jpg" alt="TREND KING">
+          <div>
+            <strong>٣) اشترك في ناسخ TREND KING.</strong>
+            <p class="subtitle">بعد الربط بالماستر، تُنسخ جميع الصفقات تلقائيًا إلى حسابك.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <footer>© 2025 — <span class="brand">TREND KING</span> • وكالة مرخّصة • ناسخ احترافي • إدارة مخاطر منضبطة</footer>
+    <footer>© 2025 — TREND KING • وكالة ونسخ صفقات • إدارة مخاطر منضبطة</footer>
   </div>
 
   <script>
-    /* Popup */
-    const popup = document.getElementById('popup');
-    function openPopup(){ popup.style.display='block'; popup.setAttribute('aria-hidden','false'); }
-    function closePopup(){ popup.style.display='none'; popup.setAttribute('aria-hidden','true'); }
-    function togglePopup(e){ e?.stopPropagation(); popup.style.display==='block' ? closePopup() : openPopup(); }
-    document.addEventListener('click', (e)=>{ if (popup.style.display==='block' && !popup.contains(e.target) && !e.target.closest('.btn')) closePopup(); });
-    document.addEventListener('keydown', (e)=>{ if (e.key==='Escape' && popup.style.display==='block') closePopup(); });
-
-    /* Calculator (base: 2500 -> $120/day, 21 days) */
-    const invInput = document.getElementById('invUSD');
-    const msg = document.getElementById('calcMsg');
-    const calcBtn = document.getElementById('calcBtn');
-    const TRADING_DAYS = 21;
-    const BASE_CAP = 2500;
-    const BASE_DAILY = 120;
-    const fmtMoney = new Intl.NumberFormat('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
-    const fmtPct   = new Intl.NumberFormat('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
-
-    function compute(inv){
-      const factor = inv / BASE_CAP;
-      const daily = BASE_DAILY * factor;
-      const monthly = daily * TRADING_DAYS;
-      const roi = (monthly / inv) * 100;
-      return {daily, monthly, roi};
+    // الحاسبة: كل 2500$ = 120$ يوميًا
+    function calc(){
+      const v = parseFloat(document.getElementById('amount').value);
+      const out = document.getElementById('res');
+      if(isNaN(v)){ out.innerHTML = 'أدخل المبلغ من فضلك.'; return; }
+      if(v < 2500){ out.innerHTML = 'الحد الأدنى للحساب والنسخ هو 2500$.'; return; }
+      const daily = (v/2500)*120; // خطي
+      const monthly = daily * 21;  // 21 يوم تداول تقريبي
+      const f = n => n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+      out.innerHTML = `الدخل اليومي: <span style="color:var(--good)">${f(daily)}</span> $<br>
+                       الدخل الشهري (تقريبًا): <span style="color:var(--good)">${f(monthly)}</span> $`;
     }
-    function calcNow(){
-      const inv = parseFloat(invInput.value);
-      if (isNaN(inv)){ msg.style.color='tomato'; msg.innerHTML='⚠️ الرجاء إدخال قيمة الاستثمار.'; return; }
-      if (inv < BASE_CAP){ msg.style.color='tomato'; msg.innerHTML=`🚫 الحد الأدنى للاستثمار هو ${BASE_CAP} دولار.`; return; }
-      const {daily, monthly, roi} = compute(inv);
-      msg.style.color = '#FFD700';
-      msg.innerHTML = `🏅 العائد اليومي: <span style="color:${getComputedStyle(document.documentElement).getPropertyValue('--good')}">${fmtMoney.format(daily)}</span> دولار<br>
-                       📅 العائد الشهري التقريبي: <span style="color:${getComputedStyle(document.documentElement).getPropertyValue('--good')}">${fmtMoney.format(monthly)}</span> دولار
-                       <br>📊 العائد الشهري نسبةً لرأس المال: ${fmtPct.format(roi)}%`;
-    }
-    calcBtn.addEventListener('click', calcNow);
-    invInput.addEventListener('input', () => { const v=parseFloat(invInput.value); if(!isNaN(v)&&v>=BASE_CAP) calcNow(); else msg.textContent=''; });
 
-    /* Fill returns table */
-    const rows = [2500, 5000, 7500, 10000, 15000, 20000];
-    const tbody = document.getElementById('returnsBody');
-    rows.forEach(cap=>{
-      const {daily,monthly,roi}=compute(cap);
-      const tr=document.createElement('tr');
-      tr.innerHTML=`
-        <td>${cap.toLocaleString('en-US')}</td>
-        <td>${fmtMoney.format(daily)}</td>
-        <td>${fmtMoney.format(monthly)}</td>
-        <td>${fmtPct.format(roi)}</td>`;
-      tbody.appendChild(tr);
-    });
+    // املأ جدول أمثلة العوائد تلقائيًا
+    (function fillTable(){
+      const capitals = [2500, 5000, 10000, 15000, 20000, 25000];
+      const tbody = document.getElementById('tblBody');
+      const f = n => n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+      capitals.forEach(c=>{
+        const daily = (c/2500)*120;
+        const monthly = daily*21;
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td>${c.toLocaleString()}</td><td>${f(daily)}</td><td>${f(monthly)}</td>`;
+        tbody.appendChild(tr);
+      });
+    })();
   </script>
 </body>
 </html>
