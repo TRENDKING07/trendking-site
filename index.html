@@ -117,10 +117,10 @@
           </button>
         </div>
 
-        <!-- QR: ضع images/qr.png ليظهر -->
+        <!-- QR: اسم الملف QR.jpg -->
         <div class="qr" title="QR للتسجيل">
-          <img src="images/qr.png" alt="QR للتسجيل" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-          <div class="fallback" style="display:none">ضع صورة QR باسم <b>qr.png</b><br>داخل مجلد <b>images/</b></div>
+          <img src="images/QR.jpg" alt="QR للتسجيل" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <div class="fallback" style="display:none">تأكّد من رفع الصورة باسم <b>QR.jpg</b> داخل مجلد <b>images/</b></div>
         </div>
       </div>
 
@@ -233,7 +233,7 @@
   </div>
 
   <script>
-    // الحاسبة: كل 2500$ = 120$ يوميًا
+    // الحاسبة: كل 2500$ = 120$ يوميًا (21 يوم تداول شهريًا)
     function calc(){
       const v = parseFloat(document.getElementById('amount').value);
       const out = document.getElementById('res');
